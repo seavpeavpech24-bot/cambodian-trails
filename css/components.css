@@ -1,0 +1,884 @@
+/* Reusable Tourism Components */
+
+/* Skeleton Loading */
+.skeleton {
+    background: linear-gradient(90deg, var(--border-color) 25%, var(--background) 50%, var(--border-color) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+    border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+.skeleton-card {
+    width: 100%;
+    height: 300px;
+}
+
+.skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+}
+
+.skeleton-title {
+    height: 24px;
+    width: 70%;
+    margin-bottom: 12px;
+}
+
+/* Enhanced Card Designs */
+.tourism-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+}
+
+.tourism-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.tourism-card-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tourism-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.tourism-card:hover .tourism-card-image img {
+    transform: scale(1.08);
+}
+
+.tourism-card-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .tourism-card-badge {
+    background: rgba(30, 41, 59, 0.95);
+    color: var(--text-primary);
+}
+
+.tourism-card-content {
+    padding: 20px;
+}
+
+.tourism-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tourism-card-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.tourism-card-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.tourism-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Rating Component */
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.rating-stars {
+    color: #fbbf24;
+    font-size: 16px;
+}
+
+.rating-value {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.rating-count {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+/* Price Tag */
+.price-tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.price-tag-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Enhanced Buttons */
+.btn-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-explore:hover {
+    background: var(--primary-dark);
+    transform: translateX(4px);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Activity Card */
+.activity-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    gap: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.activity-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.activity-card-image {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.activity-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.activity-card:hover .activity-card-image img {
+    transform: scale(1.1);
+}
+
+.activity-card-body {
+    flex: 1;
+    padding: 16px 16px 16px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-card-meta {
+    display: flex;
+    gap: 16px;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.activity-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.activity-meta-item .icon {
+    font-size: 16px;
+}
+
+/* Travel Tip Card */
+.tip-card-enhanced {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-card-enhanced:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.tip-card-enhanced::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.tip-card-enhanced:hover::after {
+    opacity: 1;
+}
+
+.tip-card-enhanced.tip-budget {
+    background: linear-gradient(135deg, #0891b2, #06b6d4);
+}
+
+.tip-card-enhanced.tip-itinerary {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.tip-card-enhanced.tip-pack {
+    background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+.tip-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+}
+
+.tip-card-enhanced:hover .tip-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.tip-card-enhanced h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.tip-card-enhanced p {
+    line-height: 1.8;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+}
+
+.tip-number {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.tip-card-enhanced:hover .tip-number {
+    color: rgba(255, 255, 255, 0.15);
+}
+
+/* Map Marker Popup */
+.map-popup {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: var(--shadow-xl);
+    min-width: 250px;
+    border: 1px solid var(--border-color);
+}
+
+.map-popup-image {
+    width: 100%;
+    height: 140px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.map-popup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.map-popup-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.map-popup-location {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+/* Badge Components */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-primary {
+    background: rgba(8, 145, 178, 0.1);
+    color: var(--primary-color);
+}
+
+.badge-secondary {
+    background: rgba(249, 115, 22, 0.1);
+    color: var(--secondary-color);
+}
+
+.badge-success {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent-color);
+}
+
+/* Info Box */
+.info-box {
+    background: var(--background);
+    border-left: 4px solid var(--primary-color);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    margin: 16px 0;
+}
+
+.info-box-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-box-content {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.stat-item {
+    background: var(--surface);
+    padding: 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.stat-item:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Responsive Grid */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1024px) {
+    .grid-4 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .activity-card {
+        flex-direction: column;
+    }
+    .activity-card-image {
+        width: 100%;
+        height: 200px;
+    }
+    .activity-card-body {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* Floating Action Button */
+.fab {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    transition: var(--transition);
+    z-index: 99;
+}
+
+.fab:hover {
+    background: var(--primary-dark);
+    transform: scale(1.1);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.empty-state-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.empty-state-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.empty-state-description {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+
+/* Enhanced Micro-Animations - Cambodian Trails */
+
+/* Button Press Effect */
+.btn, .action-btn, .filter-chip, .btn-explore {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.btn:active, .action-btn:active, .filter-chip:active, .btn-explore:active {
+    transform: translateY(1px);
+}
+
+/* Card Lift Animation */
+.tourism-card, .activity-card, .tool-card {
+    transition: var(--transition);
+}
+
+.tourism-card:hover, .activity-card:hover, .tool-card:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+
+/* Icon Bounce on Hover */
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+.nav-item:hover .icon {
+    animation: iconBounce 0.5s ease;
+}
+
+/* Love Button Animation */
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    50% { transform: scale(1.1); }
+}
+
+.love-btn[data-loved="true"] .icon {
+    animation: heartBeat 0.5s ease;
+}
+
+/* Shimmer Effect for Loading */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--border-color) 0%,
+        var(--background) 50%,
+        var(--border-color) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Smooth Page Transitions */
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-content {
+    animation: pageEnter 0.4s ease-out;
+}
+
+/* Badge Pulse */
+@keyframes badgePulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.badge {
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* Notification Badge */
+.nav-item .badge {
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* Hover Glow Effect */
+.tourism-card:hover,
+.activity-card:hover {
+    box-shadow: 
+        var(--shadow-lg),
+        0 0 20px rgba(2, 132, 199, 0.1);
+}
+
+/* Image Zoom with Smooth Transition */
+.tourism-card-image img,
+.activity-card-image img,
+.gallery-item img {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stagger Animation for Lists */
+.tourism-card:nth-child(1) { animation-delay: 0s; }
+.tourism-card:nth-child(2) { animation-delay: 0.1s; }
+.tourism-card:nth-child(3) { animation-delay: 0.2s; }
+.tourism-card:nth-child(4) { animation-delay: 0.3s; }
+.tourism-card:nth-child(5) { animation-delay: 0.4s; }
+.tourism-card:nth-child(6) { animation-delay: 0.5s; }
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus Visible for Accessibility */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Button Ripple Effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.btn::after,
+.action-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn:active::after,
+.action-btn:active::after {
+    animation: ripple 0.6s ease-out;
+}
+
+/* Enhanced Shadow on Scroll */
+.sidebar {
+    box-shadow: var(--shadow);
+}
+
+/* Gradient Text Animation */
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.page-header h1 {
+    background-size: 200% auto;
+    animation: gradientShift 3s ease infinite;
+}
+
+/* Tooltip Enhancement */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    padding: 6px 12px;
+    background: var(--text-primary);
+    color: var(--surface);
+    font-size: 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Success Checkmark Animation */
+@keyframes checkmark {
+    0% {
+        stroke-dashoffset: 100;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Smooth Transitions for Theme Switch */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Action Buttons (Love, Save, Ask) */
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-btn:hover {
+    background: var(--background);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.action-btn .icon {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+/* Love Button States */
+.love-btn[data-loved="true"] {
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+.love-btn[data-loved="true"] .icon i {
+    color: #ef4444;
+}
+
+.love-btn:hover {
+    color: #ef4444;
+    border-color: #ef4444;
+}
+
+/* Save Button States */
+.save-btn[data-saved="true"] {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    background: rgba(8, 145, 178, 0.1);
+}
+
+.save-btn[data-saved="true"] .icon i {
+    color: var(--primary-color);
+}
+
+/* Ask Button */
+.ask-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Post Actions Container */
+.post-actions {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.blog-footer {
+    padding-top: 24px;
+}

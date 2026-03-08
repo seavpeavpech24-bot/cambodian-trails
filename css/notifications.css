@@ -1,0 +1,119 @@
+.notifications-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.notifications-header h1 {
+    font-size: 32px;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-color);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.notification-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px;
+    background: var(--surface);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+    position: relative;
+}
+
+.notification-item:hover {
+    background: var(--background);
+}
+
+.notification-item.unread {
+    background: rgba(8, 145, 178, 0.05);
+}
+
+.notification-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.notification-icon.answer {
+    background: #dcfce7;
+}
+
+.notification-icon.new-post {
+    background: #dbeafe;
+}
+
+.notification-icon.qa {
+    background: #fef3c7;
+}
+
+[data-theme="dark"] .notification-icon.answer {
+    background: #14532d;
+}
+
+[data-theme="dark"] .notification-icon.new-post {
+    background: #1e3a8a;
+}
+
+[data-theme="dark"] .notification-icon.qa {
+    background: #78350f;
+}
+
+.notification-content {
+    flex: 1;
+}
+
+.notification-content p {
+    margin-bottom: 4px;
+}
+
+.notification-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.notification-time {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.unread-dot {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .notifications-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .notifications-header .btn {
+        width: 100%;
+    }
+}

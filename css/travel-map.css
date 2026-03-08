@@ -1,0 +1,422 @@
+.map-container {
+    display: flex;
+    height: calc(100vh - 40px);
+    gap: 0;
+}
+
+.map-sidebar {
+    width: 350px;
+    background: var(--card-bg);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.map-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.map-header h2 {
+    margin: 0 0 15px 0;
+    color: var(--text-primary);
+}
+
+.search-box {
+    display: flex;
+    gap: 8px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+.search-box button {
+    padding: 10px 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: var(--primary-hover);
+}
+
+.filter-section {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.filter-section h3 {
+    margin: 0 0 15px 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 8px 12px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    color: var(--text-primary);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.filter-btn:hover {
+    background: var(--hover-bg);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.destinations-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+/* Custom Scrollbar Styling */
+.destinations-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.destinations-list::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+    border-radius: 10px;
+}
+
+.destinations-list::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.destinations-list::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Firefox scrollbar */
+.destinations-list {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-primary);
+}
+
+.destination-item {
+    padding: 15px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.destination-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.destination-item.active {
+    border-color: var(--primary-color);
+    background: var(--hover-bg);
+}
+
+.destination-item h4 {
+    margin: 0 0 5px 0;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.destination-item .category-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 12px;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.destination-item p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.map-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Custom Leaflet Marker Styles */
+.custom-marker {
+    background: none;
+    border: none;
+}
+
+.marker-pin {
+    width: 30px;
+    height: 42px;
+    border-radius: 50% 50% 50% 0;
+    position: relative;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.marker-pin:hover {
+    transform: rotate(-45deg) scale(1.1);
+}
+
+.marker-pin i {
+    transform: rotate(45deg);
+    color: white;
+    font-size: 14px;
+}
+
+.marker-bounce {
+    animation: bounce 0.5s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Leaflet popup customization */
+.leaflet-popup-content-wrapper {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border-radius: 12px;
+}
+
+.leaflet-popup-tip {
+    background: var(--card-bg);
+}
+
+.map-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.map-controls button {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-controls button:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.info-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-modal.active {
+    display: flex;
+}
+
+.info-modal-content {
+    background: var(--card-bg);
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    padding: 30px;
+}
+
+/* Custom Scrollbar for Modal */
+.info-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.info-modal-content::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+    border-radius: 10px;
+}
+
+.info-modal-content::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.info-modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Firefox scrollbar */
+.info-modal-content {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--bg-primary);
+}
+
+.close-info-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.close-info-btn:hover {
+    background: var(--hover-bg);
+    color: var(--text-primary);
+}
+
+.modal-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    color: var(--text-primary);
+}
+
+.modal-location {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.modal-description {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.modal-btn.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.modal-btn.primary:hover {
+    background: var(--primary-hover);
+}
+
+.modal-btn.secondary {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.modal-btn.secondary:hover {
+    background: var(--hover-bg);
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        flex-direction: column;
+    }
+
+    .map-sidebar {
+        width: 100%;
+        height: 40%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .map-wrapper {
+        height: 60%;
+    }
+}

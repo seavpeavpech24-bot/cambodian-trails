@@ -1,0 +1,356 @@
+.tool-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tool-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 20px;
+    color: white;
+}
+
+.tool-icon {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 48px;
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.tool-header h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.tool-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.tool-stats {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+}
+
+.tool-stats span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.converter-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    border: 1px solid var(--border-color);
+}
+
+.converter-section {
+    margin-bottom: 25px;
+}
+
+.converter-section label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.currency-input-group {
+    display: flex;
+    gap: 15px;
+}
+
+.currency-input-group input {
+    flex: 1;
+    padding: 18px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s;
+}
+
+.currency-input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
+}
+
+.currency-input-group select {
+    min-width: 180px;
+    padding: 18px 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%230891b2' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 45px;
+}
+
+.currency-input-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.1);
+}
+
+.currency-input-group select:hover {
+    border-color: var(--primary-color);
+}
+
+.currency-input-group select option {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 10px;
+    font-size: 14px;
+}
+
+.swap-btn {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 0 auto 25px;
+    display: block;
+    transition: all 0.4s;
+    box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3);
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg) scale(1.1);
+    box-shadow: 0 6px 25px rgba(8, 145, 178, 0.4);
+}
+
+.swap-btn:active {
+    transform: rotate(180deg) scale(0.95);
+}
+
+.exchange-rate-info {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 2px solid var(--border-color);
+    margin-top: 10px;
+}
+
+.exchange-rate-info p {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.exchange-rate-info small {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.quick-conversions {
+    margin-bottom: 40px;
+}
+
+.quick-conversions h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.conversion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.conversion-item {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s;
+}
+
+.conversion-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.conversion-item .amount {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 5px;
+}
+
+.conversion-item .result {
+    font-size: 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.currency-tips h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: var(--text-primary);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.tip-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary-color);
+}
+
+.tip-card i {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.tip-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.tip-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+}
+
+.data-source-info {
+    text-align: center;
+    padding: 20px;
+    margin: 30px 0;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.data-source-info p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.data-source-info i.fa-info-circle {
+    color: var(--primary-color);
+    margin-right: 5px;
+}
+
+#lastUpdated {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .tool-container {
+        padding: 15px;
+    }
+
+    .tool-header {
+        padding: 30px 20px;
+        margin-bottom: 30px;
+    }
+
+    .tool-header h1 {
+        font-size: 28px;
+    }
+
+    .tool-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 36px;
+    }
+
+    .currency-input-group {
+        flex-direction: column;
+    }
+
+    .currency-input-group select {
+        min-width: 100%;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Dark theme support for select dropdown */
+[data-theme="dark"] .currency-input-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2334d399' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .currency-input-group select option {
+    background: #1f2937;
+    color: #f3f4f6;
+}
+
+/* Light theme support for select dropdown */
+[data-theme="light"] .currency-input-group select option {
+    background: #ffffff;
+    color: #1f2937;
+}

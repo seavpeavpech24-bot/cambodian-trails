@@ -1,0 +1,161 @@
+.destinations-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    gap: 24px;
+}
+
+.page-header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-subtitle {
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.filter-section {
+    margin-bottom: 32px;
+}
+
+.filter-chips {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--background);
+}
+
+.filter-chips::-webkit-scrollbar {
+    height: 8px;
+}
+
+.filter-chips::-webkit-scrollbar-track {
+    background: var(--background);
+    border-radius: 10px;
+}
+
+.filter-chips::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.filter-chips::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+.filter-chip {
+    padding: 12px 24px;
+    border: 2px solid var(--border-color);
+    border-radius: 24px;
+    background: var(--surface);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-chip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    opacity: 0;
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.filter-chip:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.filter-chip:hover::before {
+    opacity: 0.1;
+}
+
+.filter-chip.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-color: transparent;
+    color: white;
+    box-shadow: var(--shadow-md);
+}
+
+.filter-chip.active::before {
+    opacity: 1;
+}
+
+@keyframes filterPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(8, 145, 178, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 8px rgba(8, 145, 178, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(8, 145, 178, 0);
+    }
+}
+
+.filter-chip.active {
+    animation: filterPulse 0.6s ease-out;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+    }
+    
+    .page-header h1 {
+        font-size: 28px;
+    }
+    
+    .header-actions {
+        width: 100%;
+    }
+    
+    .header-actions .btn {
+        flex: 1;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
